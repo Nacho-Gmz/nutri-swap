@@ -11,12 +11,15 @@ import Sidebar from './components/Sidebar.vue'
 
 <style>
 :root {
-    --primary: #4ade80;
-    --primary-alt: #22c55e;
-    --grey: #64748b;
-    --dark: #1e293b;
-    --dark-alt: #334155;
-    --light: #f1f5f9;
+    --light: #fffffe;
+    --light-alt: #abd1c6;
+    --dark: #001e1d;
+    --dark-alt: #0f3433;
+
+    --primary: #abd1c6;
+    --secondary: #004643;
+
+    --grey: #757575;
     --sidebar-width: 300px;
 }
 
@@ -28,7 +31,7 @@ import Sidebar from './components/Sidebar.vue'
 }
 
 body {
-    background: var(--light);
+    background: var(--primary);
 }
 
 button {

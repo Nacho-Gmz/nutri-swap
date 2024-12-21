@@ -6,12 +6,14 @@ const is_expanded = ref(false);
 const ToggleMenu = () => {
     is_expanded.value = !is_expanded.value;
 }
+
 </script>
 
 <template>
     <aside :class="[is_expanded ? 'is-expanded' : '']">
         <div class="logo">
             <img class="logo-img" src="../assets/images/logo.png" alt="">
+            <span class="text">NutriSwap</span>
         </div>
 
         <div class="menu-toggle-wrap">
@@ -41,7 +43,7 @@ const ToggleMenu = () => {
 aside {
     display: flex;
     flex-direction: column;
-    background-color: var(--dark);
+    background-color: var(--secondary);
     color: var(--light);
     width: calc(2rem + 32px);
     overflow: hidden;
@@ -50,52 +52,59 @@ aside {
     transition: 0.2s ease-in-out;
 }
 
-aside .flex {
-    flex: 1 1 0%;
-}
-
 aside .logo {
-    margin-bottom: 1rem;
+    display: flex;
+    margin-bottom: 0.7rem;
+    align-items: center;
+    position: relative;
+    top: 0;
+    transition: 0.2s ease-in-out;
 }
 
 aside .logo img {
     width: 2rem;
 }
 
+aside .logo .text {
+    color: var(--light);
+    font-size: 1rem;
+}
+
 aside .menu-toggle-wrap {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     position: relative;
     top: 0;
     transition: 0.2s ease-in-out;
 }
 
 aside .menu-toggle-wrap .menu-toggle {
-    transition: 0.2s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
 aside .menu-toggle-wrap .menu-toggle .material-icons {
     font-size: 2rem;
-    color: var(--light);
-    transition: 0.2s ease-out;
+    color: var(--primary);
+    transition: 0.5s ease-out;
 }
 
 aside .menu-toggle-wrap .menu-toggle:hover .material-icons {
-    color: var(--primary);
+    color: var(--light);
     transform: translateX(0.5rem);
 }
 
 aside h3,
+aside .logo .text,
 aside .button .text {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
 aside h3 {
-    color: var(--grey);
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
+    color: var(--light);
+    font-size: 1rem;
+    margin-bottom: 0;
     text-transform: uppercase;
 }
 
@@ -103,23 +112,25 @@ aside .menu {
     margin: 0 -1rem;
 }
 
+aside .logo .text,
 aside .menu .button {
     display: flex;
     align-items: center;
     text-decoration: none;
-    transition: 0.2s ease-in-out;
+    transition: 0.5s ease-in-out;
     padding: 0.5rem 1rem;
 }
 
 aside .menu .button .material-icons {
     font-size: 2rem;
-    color: var(--light);
-    transition: 0.2s ease-in-out;
+    color: var(--light-alt);
+    transition: 0.5s ease-in-out;
 }
 
 aside .menu .button .text {
-    color: var(--light);
+    color: var(--light-alt);
     transition: 0.2s ease-in-out;
+    max-height: 32px;
 }
 
 aside .menu .button:hover {
@@ -128,27 +139,17 @@ aside .menu .button:hover {
 
 aside .menu .button:hover .material-icons,
 aside .menu .button:hover .text {
-    color: var(--primary);
+    color: var(--light);
 }
 
 aside .menu .button.router-link-exact-active {
     background-color: var(--dark-alt);
-    border-right: 5px solid var(--primary);
+    border-right: 5px solid var(--light);
 }
 
 aside .menu .button.router-link-exact-active .material-icons,
 aside .menu .button.router-link-exact-active .text {
-    color: var(--primary);
-}
-
-aside .footer {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-
-aside .footer p {
-    font-size: 0.875rem;
-    color: var(--grey);
+    color: var(--light);
 }
 
 aside.is-expanded {
@@ -164,6 +165,7 @@ aside.is-expanded .menu-toggle-wrap .menu-toggle {
 }
 
 aside.is-expanded h3,
+aside.is-expanded .logo .text,
 aside.is-expanded .button .text {
     opacity: 1;
 }
@@ -172,13 +174,9 @@ aside.is-expanded .button .material-icons {
     margin-right: 1rem;
 }
 
-aside.is-expanded .footer {
-    opacity: 0;
-}
-
 @media (max-width: 1024px) {
     aside {
-        position: absolute;
+        /* position: absolute; */
         z-index: 99;
     }
 }
