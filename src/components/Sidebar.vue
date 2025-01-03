@@ -50,6 +50,7 @@ aside {
     min-height: 100vh;
     padding: 1rem;
     transition: 0.2s ease-in-out;
+    position: fixed;
 }
 
 aside .logo {

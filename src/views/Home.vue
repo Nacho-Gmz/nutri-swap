@@ -1,11 +1,13 @@
 <script setup>
+import HomeCard from '@/components/HomeCard.vue';
+
 
 </script>
 
 <template>
     <div class="home-page">
-        <h1>Inicio</h1>
-        <p>Página de Inicio</p>
+        <h1>NutriSwap</h1>
+        <HomeCard></HomeCard>
     </div>
 </template>
 

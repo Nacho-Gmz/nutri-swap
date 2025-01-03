@@ -1,7 +1,12 @@
+<script setup>
+import SwapBar from '@/components/SwapBar.vue';
+
+</script>
+
 <template>
     <main class="swapper-page">
         <h1>Intercambio</h1>
-        <p>Página de Intercambio de porciones</p>
+        <SwapBar></SwapBar>
     </main>
 </template>
 
