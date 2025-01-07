@@ -1,42 +1,34 @@
 <script setup>
 import { ref } from 'vue';
 
-const is_expanded = ref(false);
+const drawer = ref(true);
+const rail = ref(true);
 
-const ToggleMenu = () => {
-    is_expanded.value = !is_expanded.value;
-}
+const items = ref([
+    { title: "Inicio", icon: "home", route: "/" },
+    { title: "Intercambio", icon: "sync", route: "/swapper" },
+    { title: "Acerca de", icon: "info", route: "/about" },
 
+])
 </script>
 
 <template>
-    <aside :class="[is_expanded ? 'is-expanded' : '']">
-        <div class="logo">
-            <img class="logo-img" src="../assets/images/logo.png" alt="">
-            <span class="text">NutriSwap</span>
-        </div>
+    <v-navigation-drawer expand-on-hover rail>
+        <v-list>
+            <v-list-item prepend-avatar="/logo.png" title="NutriSwap"></v-list-item>
+        </v-list>
 
-        <div class="menu-toggle-wrap">
-            <button class="menu-toggle" @click="ToggleMenu">
-                <span class="material-icons">menu</span>
-            </button>
-        </div>
-        <h3>Menu</h3>
-        <div class="menu">
-            <RouterLink class="button" to="/">
-                <span class="material-icons">home</span>
-                <span class="text">Inicio</span>
-            </RouterLink>
-            <RouterLink class="button" to="/swapper">
-                <span class="material-icons">sync</span>
-                <span class="text">Intercambio</span>
-            </RouterLink>
-            <RouterLink class="button" to="/about">
-                <span class="material-icons">info</span>
-                <span class="text">Acerca de</span>
-            </RouterLink>
-        </div>
-    </aside>
+        <v-divider></v-divider>
+
+        <v-list density="compact" nav>
+            <v-list-item v-for="item in items" :key="item.title" :to="item.route" :title="item.title"
+                active-class="router-link-exact-active" class="button" color="primary" rounded="xl">
+                <template v-slot:prepend>
+                    <span class="material-icons">{{ item.icon }}</span>
+                </template>
+            </v-list-item>
+        </v-list>
+    </v-navigation-drawer>
 </template>
 
 <style scoped>

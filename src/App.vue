@@ -3,10 +3,10 @@ import Sidebar from './components/Sidebar.vue'
 </script>
 
 <template>
-    <div class="app">
+    <v-app class="app">
         <Sidebar />
         <RouterView />
-    </div>
+    </v-app>
 </template>
 
 <style>

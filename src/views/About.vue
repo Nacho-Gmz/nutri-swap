@@ -1,8 +1,12 @@
+<script setup lang="ts">
+import AboutCard from '@/components/AboutCard.vue';
+
+</script>
+
 <template>
-    <main class="about-page">
-        <h1>Acerca de</h1>
-        <p>Página de información</p>
-    </main>
+    <v-main class="about-page">
+        <AboutCard />
+    </v-main>
 </template>
 
 <style scoped>
@@ -10,9 +14,11 @@
     display: grid;
     align-items: center;
     justify-items: center;
+    margin-top: 10px;
+    gap: 10px;
 
     color: var(--dark);
 
-    width: 100vw;
+    width: 100%;
 }
 </style>
