@@ -1,13 +1,14 @@
 <script setup>
 import SwapBar from '@/components/SwapBar.vue';
+import SwapSection from '@/components/SwapSection.vue';
 
 </script>
 
 <template>
-    <main class="swapper-page">
-        <h1>Intercambio</h1>
+    <v-main class="swapper-page">
         <SwapBar></SwapBar>
-    </main>
+        <SwapSection></SwapSection>
+    </v-main>
 </template>
 
 <style scoped>

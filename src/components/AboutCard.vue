@@ -1,3 +1,26 @@
+<script setup>
+const items = [
+    {
+        title: 'Luis Ignacio Gómez Aldrete',
+        subtitle: 'Diseño / Full Stack / Intercambiador',
+        text: 'luis.gomez5882@alumnos.udg.mx',
+        avatar: 'https://vuetifyjs.b-cdn.net/images/john-smirk.png',
+    },
+    {
+        title: 'Dayal Gutiérrez Villalobos',
+        subtitle: 'Backend / Base de datos / Documentación',
+        text: 'dayal.gutierrez5863@alumnos.udg.mx',
+        avatar: 'https://vuetifyjs.b-cdn.net/images/john-smirk.png',
+    },
+    {
+        title: 'Emanuel Michel Lopez Franco',
+        subtitle: 'Asesor',
+        text: 'michel.lopez@academicos.udg.mx',
+        avatar: 'https://vuetifyjs.b-cdn.net/images/john-smirk.png',
+    },
+]
+</script>
+
 <template>
     <v-container class="pa-6 pa-md-12" fluid>
         <v-row>
@@ -25,26 +48,3 @@
         </v-row>
     </v-container>
 </template>
-
-<script setup>
-const items = [
-    {
-        title: 'Luis Ignacio Gómez Aldrete',
-        subtitle: 'Diseño / Frontend / Swapper',
-        text: 'luis.gomez5882@alumnos.udg.mx',
-        avatar: 'https://vuetifyjs.b-cdn.net/images/john-smirk.png',
-    },
-    {
-        title: 'Dayal Gutiérrez Villalobos',
-        subtitle: 'Backend / Base de datos / Documentación',
-        text: 'dayal.gutierrez5863@alumnos.udg.mx',
-        avatar: 'https://vuetifyjs.b-cdn.net/images/john-smirk.png',
-    },
-    {
-        title: 'Emanuel Michel Lopez Franco',
-        subtitle: 'Asesor',
-        text: 'michel.lopez@academicos.udg.mx',
-        avatar: 'https://vuetifyjs.b-cdn.net/images/john-smirk.png',
-    },
-]
-</script>

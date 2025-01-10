@@ -12,6 +12,9 @@
                 Nuestro servicio se especializa en encontrar el sustituto que más se asemeje nutricionalmente al
                 alimento que deseas intercambiar.
             </p>
+            <br>
+            <v-btn rounded class="text-none" color="primary" size="x-large" text="Empieza a intercambiar" variant="flat"
+                :to="'/swapper'" />
         </v-responsive>
     </v-container>
 
