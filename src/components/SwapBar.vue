@@ -6,7 +6,7 @@ const items = ref(["Manzana", "Naranja", "Pera", "Piña", "Fresa",]);
 </script>
 
 <template>
-    <v-container class="pa-6 pa-md-12 my-16" fluid>
+    <v-container class="pa-6 pa-md-12 mt-16" fluid>
         <v-responsive class="mx-auto text-center" max-width="600">
             <p class="font-weight-bold text-sm-h2 text-h4 mt-2'">
                 Intercambio

@@ -1,43 +1,32 @@
 <script setup>
-import { ref } from 'vue';
+defineProps({
+    name: String,
+    nutrients: Array,
+    reference: {
+        type: Array,
+        default: () => [],
+    },
+});
 
-const alimento = []
+import { computed } from 'vue';
 
-const desserts = [
-    {
-        name: 'Calorías',
-        calories: 159,
-    },
-    {
-        name: 'Carbohidratos',
-        calories: 237,
-    },
-    {
-        name: 'Proteína',
-        calories: 262,
-    },
-    {
-        name: 'Lípidos',
-        calories: 305,
-    },
-]
+const referenceMap = computed(() => {
+    return reference.reduce((map, item) => {
+        map[item.name] = item.amount;
+        return map;
+    }, {});
+});
 
 </script>
 
 <template>
     <v-card variant="tonal">
-        <v-card-item>
-            <v-card-title primary-title>
-                <!-- {{ alimento.name }} -->
-                Manzana
-            </v-card-title>
-        </v-card-item>
         <v-card-text>
             <v-table>
                 <thead>
                     <tr>
                         <th class="text-left">
-
+                            {{ name }}
                         </th>
                         <th class="text-left">
                             <b>Cantidad</b>
@@ -45,9 +34,12 @@ const desserts = [
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="item in desserts" :key="item.name">
-                        <td>{{ item.name }}</td>
-                        <td>{{ item.calories }}</td>
+                    <tr v-for="(nutrient, index) in nutrients" :key="index" :class="{
+                        'text-red-500': nutrient.amount < (referenceMap[nutrient.name] || 0),
+                        'text-green-500': nutrient.amount > (referenceMap[nutrient.name] || 0),
+                    }">
+                        <td>{{ nutrient.name }}</td>
+                        <td>{{ nutrient.amount }}</td>
                     </tr>
                 </tbody>
             </v-table>
@@ -56,3 +48,13 @@ const desserts = [
         </v-card-text>
     </v-card>
 </template>
+
+<style lang="css" scoped>
+.text-red-500 {
+    color: red;
+}
+
+.text-green-500 {
+    color: green;
+}
+</style>

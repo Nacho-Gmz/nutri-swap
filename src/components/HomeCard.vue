@@ -4,7 +4,7 @@
             <p class="font-weight-bold text-sm-h2 text-h4 mt-2'">
                 NutriSwap
             </p>
-            <p class="font-weight-medium text-primary">¡Cambia, combina y disfruta el mejor match para tus porciones!
+            <p class="font-weight-medium text-primary">¡Intercambia y disfruta el mejor match para tus porciones!
             </p>
 
             <p class="mt-4 text-body-1 text-medium-emphasis">
