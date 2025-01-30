@@ -1,21 +1,50 @@
 <template>
-    <v-container class="pa-6 pa-md-12 my-16" fluid>
-        <v-responsive class="mx-auto text-center" max-width="600">
-            <p class="font-weight-bold text-sm-h2 text-h4 mt-2'">
-                NutriSwap
+    <v-container class="fill-height" fluid>
+        <v-responsive class="mx-auto text-center d-flex align-center justify-center" max-width="600"
+            style="height: 100vh;">
+            <p class="font-weight-bold text-sm-h2 text-h4 mt-2">
+                {{ titleText }}
             </p>
-            <p class="font-weight-medium text-primary">¡Intercambia y disfruta el mejor match para tus porciones!
+            <p class="font-weight-medium text-primary">
+                {{ subtitleText }}
             </p>
-
             <p class="mt-4 text-body-1 text-medium-emphasis">
-                El intercambio de porciones nunca fue tan fácil.
-                Nuestro servicio se especializa en encontrar el sustituto que más se asemeje nutricionalmente al
-                alimento que deseas intercambiar.
+                {{ descriptionText }}
             </p>
             <br>
-            <v-btn rounded class="text-none" color="primary" size="x-large" text="Empieza a intercambiar" variant="flat"
-                :to="'/swapper'" />
+            <v-btn v-if="showButton" rounded class="text-none" color="primary" size="x-large" :text="buttonText"
+                variant="flat" :to="buttonLink" />
         </v-responsive>
     </v-container>
-
 </template>
+
+<script>
+export default {
+    props: {
+        titleText: {
+            type: String,
+            default: 'Placeholder title'
+        },
+        subtitleText: {
+            type: String,
+            default: 'Placeholder subtitle'
+        },
+        descriptionText: {
+            type: String,
+            default: 'If you are seein this is because the component is not properly set up'
+        },
+        buttonText: {
+            type: String,
+            default: 'Placeholder button text'
+        },
+        buttonLink: {
+            type: String,
+            default: '/'
+        },
+        showButton: {
+            type: Boolean,
+            default: false
+        }
+    }
+};
+</script>
