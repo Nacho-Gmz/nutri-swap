@@ -1,8 +1,19 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
-const items = ref(["Manzana", "Naranja", "Pera", "Piña", "Fresa",]);
+const items = ref([]);
 
+const fetchFoodNames = async () => {
+    try {
+        const response = await fetch('http://localhost:5000/nombrealimentos'); // Adjust if hosted elsewhere
+        const data = await response.json();
+        items.value = data.map(item => item.Alimento); // Extract food names
+    } catch (error) {
+        console.error('Error fetching food names:', error);
+    }
+};
+
+onMounted(fetchFoodNames);
 </script>
 
 <template>

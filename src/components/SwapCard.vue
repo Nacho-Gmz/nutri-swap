@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { computed } from 'vue';
+
+const props = defineProps({
     name: String,
     nutrients: Array,
     reference: {
@@ -8,15 +10,12 @@ defineProps({
     },
 });
 
-import { computed } from 'vue';
-
 const referenceMap = computed(() => {
-    return reference.reduce((map, item) => {
+    return props.reference.length > 0 ? props.reference.reduce((map, item) => {
         map[item.name] = item.amount;
         return map;
-    }, {});
+    }, {}) : null;
 });
-
 </script>
 
 <template>
@@ -35,16 +34,24 @@ const referenceMap = computed(() => {
                 </thead>
                 <tbody>
                     <tr v-for="(nutrient, index) in nutrients" :key="index" :class="{
-                        'text-red-500': nutrient.amount < (referenceMap[nutrient.name] || 0),
-                        'text-green-500': nutrient.amount > (referenceMap[nutrient.name] || 0),
+                        'text-red-500': referenceMap && nutrient.amount < (referenceMap[nutrient.name] || 0),
+                        'text-green-500': referenceMap && nutrient.amount > (referenceMap[nutrient.name] || 0),
                     }">
                         <td>{{ nutrient.name }}</td>
-                        <td>{{ nutrient.amount }}</td>
+                        <td>
+                            <span v-if="referenceMap && nutrient.amount > (referenceMap[nutrient.name] || 0)"
+                                class="text-green-500">
+                                <span class="material-symbols">arrow_up</span>
+                            </span>
+                            <span v-if="referenceMap && nutrient.amount < (referenceMap[nutrient.name] || 0)"
+                                class="text-red-500">
+                                <span class="material-symbols">arrow_down</span>
+                            </span>
+                            {{ nutrient.amount }}
+                        </td>
                     </tr>
                 </tbody>
             </v-table>
-            <br>
-
         </v-card-text>
     </v-card>
 </template>
