@@ -5,7 +5,7 @@ import HomeCard from '@/components/HomeCard.vue';
 <template>
     <v-main class="home-page">
         <HomeCard title-text="NutriSwap" subtitle-text="¡Intercambia, disfruta y come lo que te gusta!"
-            description-text="Cambiar un alimento por otro nunca fue tan fácil. En NutriSwap te damos la mejor alternativa para que sigas disfrutando tus comidas sin complicaciones, eligiendo lo que prefieras sin perder valor nutricional (CAMBIAR REDACCION). Solo elige, intercambia y mantén el equilibrio en tu alimentación de forma sencilla y práctica."
+            description-text="Intercambiar un alimento por otro nunca había sido tan sencillo. En NutriSwap te damos las mejores opciones para que sigas disfrutando de tus comidas sin complicarte, eligiendo lo que más te guste sin perder nutrientes. Solo elige, intercambia y mantén el equilibrio en tu alimentación de forma sencilla y práctica."
             button-text="Empieza a intercambiar" button-link="/swapper" show-button="true" />
         <v-divider></v-divider>
         <HomeCard title-text="¿Qué es NutriSwap y cómo funciona?"
