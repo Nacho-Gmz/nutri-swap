@@ -11,15 +11,21 @@ import Sidebar from './components/Sidebar.vue'
 
 <style>
 :root {
-    --light: #fffffe;
-    --light-alt: #abd1c6;
-    --dark: #001e1d;
-    --dark-alt: #0f3433;
 
-    --primary: #abd1c6;
-    --secondary: #004643;
+    /* Light palette */
+    --background-light: #abd1c6;
+    --headline-light: #001e1d;
+    --text-light: #0f3433;
+    --component-bg-light: #004643;
+    --component-text-light: #fffffe;
 
-    --grey: #757575;
+    /* Dark palette */
+    --background: #004643;
+    --headline: #fffffe;
+    --text: #abd1c6;
+    --component-bg: #e8e4e6;
+    --component-text: #001e1d;
+
     --sidebar-width: 300px;
 }
 

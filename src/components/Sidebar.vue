@@ -1,8 +1,15 @@
 <script setup>
 import { ref } from 'vue';
+import { useTheme } from 'vuetify'
 
 const drawer = ref(true);
 const rail = ref(true);
+
+const theme = useTheme()
+
+function toggleTheme() {
+    theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+}
 
 const items = ref([
     { title: "Inicio", icon: "home", route: "/" },
@@ -28,5 +35,15 @@ const items = ref([
                 </template>
             </v-list-item>
         </v-list>
+        <template #append>
+            <v-list density="compact" nav>
+
+                <v-list-item @click="toggleTheme" title="Cambiar tema" color="primary" rounded="xl">
+                    <template #prepend>
+                        <span class="material-icons">contrast</span>
+                    </template>
+                </v-list-item>
+            </v-list>
+        </template>
     </v-navigation-drawer>
 </template>
