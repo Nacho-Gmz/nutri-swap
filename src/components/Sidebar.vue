@@ -37,7 +37,11 @@ const items = ref([
         </v-list>
         <template #append>
             <v-list density="compact" nav>
-
+                <v-list-item to="/login" title="Iniciar sesión" color="primary" rounded="xl">
+                    <template #prepend>
+                        <span class="material-icons">person</span>
+                    </template>
+                </v-list-item>
                 <v-list-item @click="toggleTheme" title="Cambiar tema" color="primary" rounded="xl">
                     <template #prepend>
                         <span class="material-icons">contrast</span>
