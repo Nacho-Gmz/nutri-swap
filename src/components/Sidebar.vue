@@ -20,7 +20,7 @@ const items = ref([
 </script>
 
 <template>
-    <v-navigation-drawer expand-on-hover rail>
+    <v-navigation-drawer :width="200">
         <v-list>
             <v-list-item prepend-avatar="/logo.png" title="NutriSwap"></v-list-item>
         </v-list>

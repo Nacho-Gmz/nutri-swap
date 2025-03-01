@@ -25,8 +25,6 @@ import Sidebar from './components/Sidebar.vue'
     --text: #abd1c6;
     --component-bg: #e8e4e6;
     --component-text: #001e1d;
-
-    --sidebar-width: 300px;
 }
 
 * {
