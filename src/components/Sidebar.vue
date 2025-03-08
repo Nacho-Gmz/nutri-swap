@@ -2,9 +2,6 @@
 import { ref } from "vue";
 import { useTheme } from "vuetify";
 
-const drawer = ref(true);
-const rail = ref(true);
-
 const theme = useTheme();
 
 function toggleTheme() {
@@ -19,7 +16,7 @@ const items = ref([
 </script>
 
 <template>
-  <v-navigation-drawer :width="200">
+  <v-navigation-drawer permanent :width="200">
     <v-list>
       <v-list-item prepend-avatar="/logo.png" title="NutriSwap"></v-list-item>
     </v-list>
@@ -29,6 +26,7 @@ const items = ref([
     <v-list density="compact" nav>
       <v-list-item
         v-for="item in items"
+        :prepend-icon="item.icon"
         :key="item.title"
         :to="item.route"
         :title="item.title"
@@ -37,32 +35,25 @@ const items = ref([
         color="primary"
         rounded="xl"
       >
-        <template v-slot:prepend>
-          <span class="material-icons">{{ item.icon }}</span>
-        </template>
       </v-list-item>
     </v-list>
     <template #append>
       <v-list density="compact" nav>
         <v-list-item
+          prepend-icon="person"
           to="/login"
           title="Iniciar sesión"
           color="primary"
           rounded="xl"
         >
-          <template #prepend>
-            <span class="material-icons">person</span>
-          </template>
         </v-list-item>
         <v-list-item
+          prepend-icon="contrast"
           @click="toggleTheme"
           title="Cambiar tema"
           color="primary"
           rounded="xl"
         >
-          <template #prepend>
-            <span class="material-icons">contrast</span>
-          </template>
         </v-list-item>
       </v-list>
     </template>

@@ -1,13 +1,21 @@
 import "vuetify/styles";
+import { createVuetify } from "vuetify";
 import * as components from "vuetify/components";
 import * as directives from "vuetify/directives";
-import { createVuetify } from "vuetify";
+import { aliases, md } from "vuetify/iconsets/md";
 
-const vuetify = createVuetify({
+export default createVuetify({
   components,
   directives,
+  icons: {
+    defaultSet: "md",
+    aliases,
+    sets: {
+      md,
+    },
+  },
   theme: {
-    defaultTheme: "light",
+    defaultTheme: "dark",
     themes: {
       light: {
         dark: false,
@@ -32,5 +40,3 @@ const vuetify = createVuetify({
     },
   },
 });
-
-export default vuetify;
