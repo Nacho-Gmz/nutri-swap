@@ -34,20 +34,19 @@ export default {
   props: {
     titleText: {
       type: String,
-      default: "Placeholder title",
+      default: "",
     },
     subtitleText: {
       type: String,
-      default: "Placeholder subtitle",
+      default: "",
     },
     descriptionText: {
       type: String,
-      default:
-        "If you are seein this is because the component is not properly set up",
+      default: "",
     },
     buttonText: {
       type: String,
-      default: "Placeholder button text",
+      default: "",
     },
     buttonLink: {
       type: String,
