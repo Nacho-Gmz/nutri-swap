@@ -4,8 +4,14 @@ import Sidebar from "@/components/Sidebar.vue";
 
 <template>
   <v-app class="app">
+    <!-- Navigation drawer -->
     <Sidebar />
-    <RouterView />
+    <!-- Main content -->
+    <v-main>
+      <v-container fluid>
+        <RouterView />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
